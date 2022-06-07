@@ -1,4 +1,4 @@
-
+/*
  // add title  or changing element content
 
 var changeTitle = document.querySelectorAll("#book-list li span");
@@ -15,6 +15,7 @@ Array.from(changeTitle).forEach(function(item){
     item.textContent += "  ....(prog_lang)";
 
 })  
+*/
 
 // Delete  Option and it going to delete when click the delete button
 
@@ -33,6 +34,34 @@ deleteClick.forEach(function(e){
 
 
 
-// deleteClick.addEventListener()
+// Adding book from input field
+var addBook = document.forms['add-book'];
+console.log(addBook);
+
+addBook.addEventListener('submit',function(e){
+    e.preventDefault();
+    //get the value from input
+    var ul = document.querySelector("#book-list ul")
+    
+    var value = addBook.querySelector("input[type='text']").value;
+     // console.log(value);
+
+    // add elements to dom
+
+    const liNew = document.createElement('li');
+    const bookName = document.createElement('span');
+    const deletebtn = document.createElement('button');
+
+    //ADD CONTENT TO ELEMENTS  
+    bookName.textContent = value;
+    deletebtn.textContent = 'delete';
+
+   //append  to document 
+   liNew.appendChild(bookName);
+   liNew.appendChild(deletebtn);
+   ul.appendChild(liNew);
+//  console.log(liNew.parentElement);
+   
+});
 
 
