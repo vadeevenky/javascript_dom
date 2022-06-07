@@ -1,5 +1,5 @@
 
-// add title  or changing element content
+ // add title  or changing element content
 
 var changeTitle = document.querySelectorAll("#book-list li span");
 
@@ -14,4 +14,25 @@ Array.from(changeTitle).forEach(function(item){
 
     item.textContent += "  ....(prog_lang)";
 
-})
+})  
+
+// Delete  Option and it going to delete when click the delete button
+
+
+var deleteClick = document.querySelectorAll("#book-list li button");
+console.log(deleteClick);
+deleteClick.forEach(function(e){
+    // console.log(e);
+    e.addEventListener('click', function(item){
+    
+        const li = item.target.parentElement;
+        li.parentNode.removeChild(li);
+
+    })
+});
+
+
+
+// deleteClick.addEventListener()
+
+
