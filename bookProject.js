@@ -56,6 +56,10 @@ addBook.addEventListener('submit',function(e){
     bookName.textContent = value;
     deletebtn.textContent = 'delete';
 
+    // Add classes to  Elements
+    bookName.classList.add('name');
+    deletebtn.classList.add('delete');
+
    //append  to document 
    liNew.appendChild(bookName);
    liNew.appendChild(deletebtn);
